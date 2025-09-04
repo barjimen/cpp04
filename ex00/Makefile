@@ -16,7 +16,12 @@ CXXFLAGS =    -Wall -Wextra -Werror -std=c++98 -I inc
 #-----------SHORT CUTS-----------
 
 RM				:=		rm -f
-SRC_FILES        =		main
+SRC_FILES        =		main 	\
+						Animal	\
+						Dog		\
+						Cat		\
+						WrongAnimal	\
+						WrongCat
 						
 
 SRC             =         $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FILES)))
