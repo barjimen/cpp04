@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barjimen <barjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/04 20:30:32 by barjimen          #+#    #+#             */
-/*   Updated: 2025/09/06 23:10:42 by barjimen         ###   ########.fr       */
+/*   Created: 2025/09/04 20:35:07 by barjimen          #+#    #+#             */
+/*   Updated: 2025/09/07 00:23:04 by barjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 # include <iostream>
-class Animal
+#include "Animal.hpp"
+#include "Brain.hpp"
+class Dog : public Animal
 {
-protected:
-    std::string type;
+private:
+    Brain* brain;
 public:
-    Animal(/* args */);
-    virtual ~Animal();
-    Animal(const Animal &other);
-    Animal &operator=(const Animal &other);
+    Dog(/* args */);
+    ~Dog();
+    Dog(const Dog &other);
+    Dog &operator=(const Dog &other);
 
-    virtual void makeSound() const;
-    std::string getType() const;
+    void makeSound() const;
+    void setIdea(int index, const std::string &idea);
+    std::string getIdea(int index) const;
 };
-
-
-//Virtual destructor -> evitar leak de memoria, tmb se permite redefinir el comportamiento.

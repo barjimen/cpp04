@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barjimen <barjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/04 20:30:32 by barjimen          #+#    #+#             */
-/*   Updated: 2025/09/06 23:10:42 by barjimen         ###   ########.fr       */
+/*   Created: 2025/09/04 20:59:00 by barjimen          #+#    #+#             */
+/*   Updated: 2025/09/04 21:22:07 by barjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 # include <iostream>
-class Animal
+# include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-protected:
-    std::string type;
+private:
+    /* data */
 public:
-    Animal(/* args */);
-    virtual ~Animal();
-    Animal(const Animal &other);
-    Animal &operator=(const Animal &other);
+    WrongCat(/* args */);
+    ~WrongCat();
+    WrongCat(const WrongCat &other);
+    WrongCat &operator=(const WrongCat &other);
 
-    virtual void makeSound() const;
-    std::string getType() const;
+    void makeSound() const;
 };
-
-
-//Virtual destructor -> evitar leak de memoria, tmb se permite redefinir el comportamiento.
