@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barjimen <barjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/04 20:35:40 by barjimen          #+#    #+#             */
-/*   Updated: 2025/09/07 00:26:31 by barjimen         ###   ########.fr       */
+/*   Created: 2025/09/04 20:35:59 by barjimen          #+#    #+#             */
+/*   Updated: 2025/09/08 20:52:32 by barjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Dog.hpp"
-
-Dog::Dog(/* args */)
+#include "../inc/Cat.hpp"
+Cat::Cat(/* args */)
 {
     this->brain = new Brain();
-    this->type = "Dog";
-    std::cout << "Dog constructor!" << std::endl;
+    this->type = "Cat";
+    std::cout << "Cat constructor!" << std::endl;
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
     delete this->brain;
-    std::cout << "Car desconstructor!" << std::endl;
+    std::cout << "Cat destructor!" << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(other)
+Cat::Cat(const Cat &other) : AAnimal(other)
 {
     brain = new Brain(*other.brain);
-    std::cout << "Dog copied!" << std::endl;
+    std::cout << "Cat copied!" << std::endl;
 }
 
-Dog &Dog::operator=(const Dog &other)
+Cat &Cat::operator=(const Cat &other)
 {
     if(this != &other)
     {
@@ -39,21 +38,21 @@ Dog &Dog::operator=(const Dog &other)
         delete this->brain;
         brain = new Brain(*other.brain);
     }
-    std::cout << "Dog assigned!" << std::endl;
+    std::cout << "Cat assigned!" << std::endl;
     return *this;
 }
 
-void Dog::makeSound() const
+void Cat::makeSound() const
 {
-    std::cout << "Woof!" << std::endl;
+    std::cout << "Meow!" << std::endl;
 }
 
-void Dog::setIdea(int index, const std::string &idea)
+void Cat::setIdea(int index, const std::string &idea)
 {
     this->brain->setIdea(index, idea);
 }
 
-std::string Dog::getIdea(int index) const
+std::string Cat::getIdea(int index) const
 {
     return this->brain->getIdea(index);
 }

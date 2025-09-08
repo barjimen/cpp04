@@ -6,7 +6,7 @@
 /*   By: barjimen <barjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 20:35:40 by barjimen          #+#    #+#             */
-/*   Updated: 2025/09/07 00:26:31 by barjimen         ###   ########.fr       */
+/*   Updated: 2025/09/08 20:52:27 by barjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Dog::~Dog()
     std::cout << "Car desconstructor!" << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(other)
+Dog::Dog(const Dog &other) : AAnimal(other)
 {
     brain = new Brain(*other.brain);
     std::cout << "Dog copied!" << std::endl;

@@ -27,7 +27,6 @@ Cat::~Cat()
 Cat::Cat(const Cat &other) : Animal(other)
 {
     brain = new Brain(*other.brain);
-    *this = other;
     std::cout << "Cat copied!" << std::endl;
 }
 
